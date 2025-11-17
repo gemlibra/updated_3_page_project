@@ -1,0 +1,18 @@
+/*BORDER GLOW ANIMATION EFECT BEGIN - */
+/*NOTE: THIS MODULE WORKS*/
+
+#sloganid{
+    animation: textglow 1s infinite alternate;
+  }
+  
+  @keyframes textglow {
+    from {
+      box-shadow: 0 0 10px -10px #cf1b0d;
+    }
+    to {
+      box-shadow: 0 0 10px 10px #f4aee5;
+    }
+  }
+
+/*BORDER GLOW ANIMATION EFFECT END*/
+  

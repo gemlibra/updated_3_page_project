@@ -1,0 +1,103 @@
+
+
+
+.carousel{
+    width: 100%;
+    overflow-x: auto;
+    margin: 3em auto;
+    display: flex;
+    gap: 1em;
+    scroll-behavior: smooth;
+     /*anchor-name: --carousel;    Problem code on this line unknown property */
+    scroll-snap-type: x mandatory;
+    /*scroll-marker-group: after;    Problem code on this line unknown property */
+}
+
+
+.carousel::scroll-marker-group {
+    display: flex;
+    justify-content: center;
+    gap: .5em;
+}
+
+.card::scroll-marker {
+    content: '';
+    height: 1em;
+    width: 1em;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+}
+
+.card::scroll-marker:target-current {
+    background-color:  var(--brand-color);
+}
+
+.carousel::-webkit-scrollbar{
+    display: auto;
+}
+
+.carousel::scroll-button(right) {   /* Carousel right scroll arrow */
+    content: '>';
+    border: none;
+    background-color: var(--brand-color);
+    font-family: Consolas;
+    font-size: 3rem;
+    color: white;
+    height: 60px;
+    Width: 60px;
+    border-radius: 50%;
+    padding-bottom: .1em;
+    cursor: pointer;
+    position: absolute;
+    /*position-anchor: --carousel;    Problem code on this line unknown property */
+    /*position-area: right center;   Problem code on this line unknown property */
+    translate: 50%;
+   
+ 
+}
+
+.carousel::scroll-button(left) {  /* Carousel left scroll arrow */
+    content: '<';
+    border: none;
+    background-color: var(--brand-color);
+    font-family: Consolas;
+    font-size: 3rem;
+    color: white;
+    height: 60px;
+    Width: 60px;
+    border-radius: 50%;
+    padding-bottom: .1em;
+    cursor: pointer;
+    position: relative;
+    /*position-anchor: --carousel;   Problem code on this line unknown property */
+    /*position-area: left center;    Problem code on this line unknown property */
+    translate: 50%;
+}
+
+.carousel::scroll-button(right):disabled, .carousel::scroll-button(left):disabled {
+    opacity: 0.5;
+    cursor: auto;
+}
+
+
+
+.card{
+    scroll-snap-align: start;
+    flex: 0 0 20em;
+    aspect-ratio: 5 / 3;
+    background-color: var(--primary-color);
+    padding: 1em;
+    border-radius: 5em;
+    text-align: center;
+    align-content: center;
+}
+
+@media(max-width: 500px) {
+    .card {
+        flex: 0 0 100%;
+    }
+}
+
+
+
+

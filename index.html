@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Hotel Reservation Home page</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" href="assets/css/carousel.css" /> 
+        <link rel="stylesheet" href="assets/css/carousel2.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+          
+    <div class="main_container">
+            
+                <h1 id="home"><b>Home</b></h1>
+                
+            <div class="nav-slogan"> 
+                <div class="slogan>">
+                    <h1 id="sloganid"><b>Book with us For Your Perfect &amp; luxurious stay!</b></h1>
+                </div>
+                
+                <div id="navitems">
+                    <nav id="hdrnav">  <!--NOTE: WHEN SCREEN SIZE DECREASES, NAV = HAMBURGER OR <LINKS>-->
+                            <a href="index.html">Home</a>
+                            <a href="aboutus.html">About Us</a>  
+                            <a href="contactus.html">Contact Us</a>
+                    </nav>
+                </div>
+            </div> 
+                 <!--MODAL (POPUP-->
+        
+                    <!--<button id="openModal">Open</button> -->
+        
+                <div id="mymodal" class="gxmodal">
+                    <!--Modal content-->
+                    <div id="modalcontent">
+                        <span id="closebtn">&times;</span>
+                        <h2 id="modaltitle">Attention!</h2>
+                        <p>Your information was submitted successfully, thank you!</p>
+                    </div>
+                </div>
+      
+        
+            <!--PAGE HEADER-->
+            <header>  
+                <section id="hdrsection">
+                
+                    
+                <div id="pagetitle">
+                    <h1 id="htlreserve">Hotel Reservation</h1>
+                </div>
+                    
+            </section>
+            <hr>
+                               
+            <section class="hdrsection">
+                <div id="hotellogo">
+                    <img src="assets/img/bluatlanticbldgimage.jpg" id="bluatlbldgpic">
+
+                     <div id="hotelname">
+                        <h1 id="hotelnamefont"><b><i>Blu Atlantic<br><span id="bluatlsubname">Hotel</span></i></b></h1><hr><br>
+                     </div>
+                    
+                     <div class="hospitalitytext">
+                        <h5><b><i>Our motto:<br>Hospitality &amp; comfort</i></b></h5>
+                     </div>  
+                </div>
+            </section>
+
+        </header>
+                
+        <section>
+        <!--form: Guest Check-in-->
+           
+                <form action="#" class="myform" id="formbgcolor"> <!--Insert name of file to be processed/executed in php-->
+                    <div class="alllabels">
+                            <div id="guestname">
+                                 <div>
+                                    <label id="firstname">
+                                        <b>First Name</b>:<br>
+                                        <input type="text" class="firstnm" name="firstname" required>
+                                    </label><br> 
+                                 </div>
+                                
+                                <div>
+                                    <label id="lastname">
+                                        <b>Last Name</b>:<br>
+                                        <input type="text" class="lastnm" name="lastname" required>
+                                    </label><br> 
+                                </div>
+                            </div>
+                            
+                            <div id="checkin_out_lbls">
+                                <label id="checkin">
+                                    <b>Check In</b>:<br>
+                                    <input type="date">
+                                </label><br>
+
+                                <label id="checkout">
+                                    <b>Check Out</b>:<br>
+                                    <input type="date">
+                                </label><br>
+                            </div>
+
+                            <div id="guest_lbl">
+                                <div class="numguests">
+                                    <label id="numberofguest">
+                                        <b>Num. Of Guests</b>:<br>
+                                        <select id="selectnumguests" name="selectnumguests">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="3">4</option>
+                                            <option value="3">5</option>
+                                            <option value="3">6</option>
+                                        </select>
+                                    </label>
+                                </div>
+
+                                <div class="numrooms">
+                                    <label id="selectnumrooms">
+                                        <b>Num. Of Rms</b>:<br>
+                                        <select id="selectnumrms" name="selectnumrms">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="3">4</option>
+                                            <option value="3">5</option>
+                                            <option value="3">6</option>
+                                        </select>
+                                    </label><br>
+                                </div>
+                            </div><br>
+
+                        <button id="btnsubmit">Book Now</button>
+                        <button id="btnsearch">Search</button>
+                    </div>
+                </form>
+            <hr>
+        </section>
+        
+                
+        <!-- NEW - CORRECT CAROUSEL:
+
+        <div class="card rounded" style="width: 30rem; height: auto;">
+							<div class="card-body center bg-primary">  
+									<div class="carousel">
+										<div id="carousel1" class="carousel slide" data-ride="carousel">
+											<ol class="carousel-indicators">
+												<li data-target="#carousel1" data-slide-to="0" class="active"></li>
+												<li data-target="#carousel1" data-slide-to="1"></li>
+												<li data-target="#carousel1" data-slide-to="2"></li>
+												<li data-target="#carousel1" data-slide-to="3"></li>
+												<li data-target="#carousel1" data-slide-to="4"></li>
+												<li data-target="#carousel1" data-slide-to="5"></li>
+												<li data-target="#carousel1" data-slide-to="6"></li>
+												<li data-target="#carousel1" data-slide-to="7"></li>
+												<li data-target="#carousel1" data-slide-to="8"></li>
+											</ol>
+
+											<div class="carousel-inner">
+												<div class="carousel-item active text-center p-4">
+													<img class="left-block img-responsive card-img-top embed-responsive-item" src="images/sgfimageoffice.png" alt="">
+													<div class="carousel-caption">
+														<h5>Convenient Location</h5>				
+													</div>
+												</div>
+												
+												<div class="carousel-item text-center p-4 ">
+													<img class="left-block img-responsive card-img-top embed-responsive-item" src="images/sgfimageglobalmap.png" alt="global destinations">
+													<div class="carousel-caption">
+														<h5>Global Destinations</h5>				
+													</div>
+												</div>
+
+												<div class="carousel-item text-center p-4">
+													<img class="left-block img-responsive card-img-top embed-responsive-item" src="images/sgfimageoffloading.png" alt="Cargo Offloading">
+													<div class="carousel-caption">
+														<h5>Cargo Offloading</h5>				
+													</div>
+												</div>
+
+												<div class="carousel-item text-center p-4">
+													<img class="left-block img-responsive card-img-top embed-responsive-item " src="images/sgfimageloadingdock.png" alt="loading dock">
+													<div class="carousel-caption">
+														<h5>Loading Dock</h5>				
+													</div>
+												</div>
+
+												<div class="carousel-item text-center p-4">
+													<img class="left-block img-responsive card-img-top embed-responsive-item" src="images/sgfimagegreycar1.png" alt="grey sportscar">
+													<div class="carousel-caption">
+														<h5>Consignments - Cars</h5>				
+													</div>
+												</div>
+
+												<div class="carousel-item text-center p-4">
+													<img class="left-block img-responsive card-img-top embed-responsive-item" src="images/sgfimageyellowcar2.png" alt="yellow sportscar">
+													<div class="carousel-caption">
+														<h5>Cargo - Exotics Cars</h5>				
+													</div>
+												</div>
+
+												<div class="carousel-item text-center p-4">
+													<img class="left-block img-responsive card-img-top embed-responsive-item" src="images/sgfimagewarehouse.png" alt="Warehouse">
+													<div class="carousel-caption">
+														<h5>Warehouse Facility</h5>				
+													</div>
+												</div>
+
+												<div class="carousel-item text-center p-4">
+													<img class="left-block img-responsive card-img-top embed-responsive-item" src="images/sgfimageemptycontainer.png" alt="container">
+													<div class="carousel-caption">
+														<h5>Containers Available</h5>				
+													</div>
+												</div>
+
+
+											</div>
+											<a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+												<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+											</a>
+											<a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+												<span class="carousel-control-next-icon" aria-hidden="true"></span>
+											</a>
+										</div>
+									</div>
+							</div>			
+				</div> 
+			 
+
+        NEW CAROUSEL END HERE -->
+        
+        
+        
+        
+        <!--CAROUSEL STARTS HERE-->
+        <!--
+            <main class="carousel">
+                <div class="carousel-slide">
+                    <img src="assets/img/blu atlantic pic-1.jpg"  alt="">
+                    <img src="assets/img/blu atlantic pic-2.jpg"  alt="">
+                    <img src="assets/img/blu atlantic pic-3.jpg"  alt=""> 
+                    <img src="assets/img/blu atlantic pic-5.jpg"  alt=""> 
+                    <img src="assets/img/blu atlantic pic-6.jpg"  alt=""> 
+                    <img src="assets/img/blu atlantic pic-7.jpg"  alt=""> 
+                    <img src="assets/img/blu atlantic pic-8.jpg"  alt="">
+                    <img src="assets/img/blu atlantic pic-9.jpg"  alt="">
+                    <img src="assets/img/blu atlantic pic-10.jpg"  alt=""> 
+                    <img src="assets/img/blu atlantic pic-11.jpg"  alt=""> 
+                    <img src="assets/img/blu atlantic pic-12.jpg"  alt=""> 
+                    <img src="assets/img/blu atlantic pic-13.jpg"  alt=""> 
+                    <img src="assets/img/blu atlantic pic-14.jpg"  alt=""> 
+                    <img src="assets/img/blu atlantic pic-15.jpg"  alt=""> 
+                    <img src="assets/img/blu atlantic pic-16.jpg"  alt=""> 
+                    <img src="assets/img/blu atlantic pic-17.jpg"  alt=""> 
+                    <img src="assets/img/blu atlantic pic-18.jpg"  alt=""> 
+                    <img src="assets/img/blu atlantic pic-19.jpg"  alt=""> 
+                    <img src="assets/img/blu atlantic pic-20.jpg"  alt=""> 
+                    <img src="assets/img/blu atlantic pic-21.jpg"  alt=""> 
+                    <img src="assets/img/blu atlantic pic-22.jpg" alt=""> 
+                    <img src="assets/img/blu atlantic pic-23.jpg"  alt=""> 
+                    <img src="assets/img/blu atlantic pic-24.jpg"  alt=""> 
+                </div>
+            </main> 
+            -->
+    
+    <!--CAROUSEL END HERE-->
+        
+        
+        
+        
+</div>  <!--container div end-->
+        
+    <script src="assets/js/script.js"></script>
+    </body>
+</html>

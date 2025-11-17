@@ -1,0 +1,234 @@
+
+body{
+    background-image: url(../img/bgimagecitylights.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+/*NOTE: POSITION ELEMENT ON TOP RIGHT CORNER OF PAGE:
+  NOTE: THIS MUST BE ON THE PARENT ELEMENT TO WORK
+ * */
+#mymodal{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+}
+
+/*
+/* External outer div styling*/
+
+
+
+/*inner div - modal content styling*/
+#modalcontent{
+    display: block;
+    left: 0;
+    top: 0;
+    /*float: right;*/
+    /*text-align: center;*/
+    overflow: auto;
+    background-color: blue;
+    color: white;
+    margin: 15% auto;
+    border: 1px solid dotted;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+
+/* close button 'X' styling*/
+
+#closebtn{
+    color: red;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#closebtn:hover{
+    color: black;
+    cursor: pointer;
+}
+
+#hdrnav{
+    margin-top: 20px;
+}
+
+
+#hdr{
+    color: white;
+}
+
+#navitems{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+ a {
+    color: blue;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow:  1px 3px 8px #000;  
+    transition: all;
+    margin-right:  10px;
+}
+
+a:hover{
+   box-shadow: 1px 8px 30px;   /* Create a shadow effect when element is hovered over */
+}
+
+#home{
+    color: white;
+    margin-left: 10px;
+}
+
+
+ #htlreserve{
+    text-align: center;
+    width: 200px;
+    color: white;
+    border: 1px solid yellow;
+    border-radius: 13px;
+    justify-content: center; 
+}
+
+#pagetitle{
+    display: grid;
+    place-items: center;
+}
+
+
+#hotelname{
+    font-family: "Tangerine", cursive;
+    font-weight: 700;
+    font-style: normal;
+    border: 2px solid blue;
+    border-radius: 10px;
+    color: white; 
+    height: 100px;
+}
+
+
+#hotellogo{
+    display: flex;
+    justify-content: space-between;
+}
+
+#bluatlbldgpic{
+    margin-left: 10px;
+    border: 2px solid lightblue;
+    border-radius: 15px;
+    justify-content: space-around;
+}
+
+
+.hospitalitytext{
+    font-family: "Tangerine", cursive;
+    font-size: 30px;
+    float: right;
+    color: white;
+    border: 1px solid red;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#bluatlsubname{
+    float: right;
+}
+
+
+/*Aside Element animation */
+/* The code below executes the 3D spinner defined in the html paragraph*/
+  .hospitalitytext{
+      animation-name: rotatinglaptopgraphic;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-duration: 10s;   /* <= This controls the animation speed. */
+      transform-style: preserve-3d;
+    }
+
+    /* WebKit and Opera browsers */
+    @-webkit-keyframes rotatinglaptopgraphic {
+      from { -webkit-transform: rotateY(0deg);
+      }
+      to   { -webkit-transform: rotateY(-360deg);}
+    }
+    
+    /* all other browsers */
+    @keyframes rotatinglaptopgraphic {
+      from {
+        -moz-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+      }
+      to {
+        -moz-transform: rotateY(-360deg);
+        -ms-transform: rotateY(-360deg);
+        transform: rotateY(-360deg);
+      }
+    }
+/*ANIMATION CSS END HERE */
+
+
+#myform{
+    display: grid;
+    place-items: center;
+}
+
+form{
+    background-color: lightblue;
+    border: 1px solid blue;
+    border-radius: 10px;
+    width: 500px;
+    margin-left: 15px;
+    opacity: 0.5;
+}
+
+label{
+    color: blue;
+}
+
+.usernames{
+    display: flex;
+    justify-content: center;
+}
+
+#firstnameid{
+    margin-right: 20px;
+    margin-left: 5px;
+}
+
+#emailid2{
+    margin-right: 20px;
+    margin-left: 5px;
+}
+
+.emailandtelid{
+    display: flex;
+    justify-content: center;
+}
+
+
+#commentlabelid{
+    margin-left: 5px;
+}
+
+textarea{
+    width: 482px;
+    margin-left: 5px;
+    background-color: black;
+}
+
+#submitbtn{
+    background-color: blue;
+    color: white;
+    margin-left: 10px;
+}
+
+#mapimage{
+    display: grid;
+    place-items: center;
+}
