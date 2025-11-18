@@ -64,6 +64,7 @@ body{
 #navitems{
     display: flex;
     justify-content: space-between;
+    float: right;
 }
 
 
