@@ -2,7 +2,7 @@
 /* SHOW & HIDE MODAL (POPUP)*/
 const myModal = document.getElementById("mymodal"); // get modal from page.
 const closeModal = document.getElementById("closebtn"); // Get close button 'X'
-const submitBtn = document.getElementById("btnsubmit");
+const submitBtn = document.getElementById("submitbtn");
 
 /* Show & Hide Modal => This function will be triggered by form submit button and
  * Search buttons  */
