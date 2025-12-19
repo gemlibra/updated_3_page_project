@@ -78,7 +78,7 @@
         <section>
         <!--form: Guest Check-in-->
            
-                <form action="#" class="myform" id="formbgcolor"> <!--Insert name of file to be processed/executed in php-->
+                <form action="#" class="forminput" id="formbgcolor"> <!--Insert name of file to be processed/executed in php-->
                     <div class="alllabels">
                             <div id="guestname">
                                  <div>
@@ -99,12 +99,12 @@
                             <div id="checkin_out_lbls">
                                 <label id="checkin">
                                     <b>Check In</b>:<br>
-                                    <input type="date">
+                                    <input type="date" name="datein" required>
                                 </label><br>
 
                                 <label id="checkout">
                                     <b>Check Out</b>:<br>
-                                    <input type="date">
+                                    <input type="date" name="dateout" required>
                                 </label><br>
                             </div>
 
@@ -112,7 +112,7 @@
                                 <div class="numguests">
                                     <label id="numberofguest">
                                         <b>Num. Of Guests</b>:<br>
-                                        <select id="selectnumguests" name="selectnumguests">
+                                        <select id="selectnumguests" name="numguests" required>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -126,7 +126,7 @@
                                 <div class="numrooms">
                                     <label id="selectnumrooms">
                                         <b>Num. Of Rms</b>:<br>
-                                        <select id="selectnumrms" name="selectnumrms">
+                                        <select id="selectnumrms" name="numrooms" required>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -138,146 +138,85 @@
                                 </div>
                             </div><br>
 
-                        <button id="btnsubmit">Book Now</button>
-                        <button id="btnsearch">Search</button>
+                        <button type="submit" onclick="addRecord()" id="btnsubmit">Book Now</button>
+                        <button type="button" onclick="searchRecord()" id="btnsearch">Search</button>
                     </div>
                 </form>
             <hr>
+            
+            <div>
+                <p id="output"></p>
+            </div>
+            
         </section>
         
                 
-        <!-- NEW - CORRECT CAROUSEL:
-
-        <div class="card rounded" style="width: 30rem; height: auto;">
-							<div class="card-body center bg-primary">  
-									<div class="carousel">
-										<div id="carousel1" class="carousel slide" data-ride="carousel">
-											<ol class="carousel-indicators">
-												<li data-target="#carousel1" data-slide-to="0" class="active"></li>
-												<li data-target="#carousel1" data-slide-to="1"></li>
-												<li data-target="#carousel1" data-slide-to="2"></li>
-												<li data-target="#carousel1" data-slide-to="3"></li>
-												<li data-target="#carousel1" data-slide-to="4"></li>
-												<li data-target="#carousel1" data-slide-to="5"></li>
-												<li data-target="#carousel1" data-slide-to="6"></li>
-												<li data-target="#carousel1" data-slide-to="7"></li>
-												<li data-target="#carousel1" data-slide-to="8"></li>
-											</ol>
-
-											<div class="carousel-inner">
-												<div class="carousel-item active text-center p-4">
-													<img class="left-block img-responsive card-img-top embed-responsive-item" src="images/sgfimageoffice.png" alt="">
-													<div class="carousel-caption">
-														<h5>Convenient Location</h5>				
-													</div>
-												</div>
-												
-												<div class="carousel-item text-center p-4 ">
-													<img class="left-block img-responsive card-img-top embed-responsive-item" src="images/sgfimageglobalmap.png" alt="global destinations">
-													<div class="carousel-caption">
-														<h5>Global Destinations</h5>				
-													</div>
-												</div>
-
-												<div class="carousel-item text-center p-4">
-													<img class="left-block img-responsive card-img-top embed-responsive-item" src="images/sgfimageoffloading.png" alt="Cargo Offloading">
-													<div class="carousel-caption">
-														<h5>Cargo Offloading</h5>				
-													</div>
-												</div>
-
-												<div class="carousel-item text-center p-4">
-													<img class="left-block img-responsive card-img-top embed-responsive-item " src="images/sgfimageloadingdock.png" alt="loading dock">
-													<div class="carousel-caption">
-														<h5>Loading Dock</h5>				
-													</div>
-												</div>
-
-												<div class="carousel-item text-center p-4">
-													<img class="left-block img-responsive card-img-top embed-responsive-item" src="images/sgfimagegreycar1.png" alt="grey sportscar">
-													<div class="carousel-caption">
-														<h5>Consignments - Cars</h5>				
-													</div>
-												</div>
-
-												<div class="carousel-item text-center p-4">
-													<img class="left-block img-responsive card-img-top embed-responsive-item" src="images/sgfimageyellowcar2.png" alt="yellow sportscar">
-													<div class="carousel-caption">
-														<h5>Cargo - Exotics Cars</h5>				
-													</div>
-												</div>
-
-												<div class="carousel-item text-center p-4">
-													<img class="left-block img-responsive card-img-top embed-responsive-item" src="images/sgfimagewarehouse.png" alt="Warehouse">
-													<div class="carousel-caption">
-														<h5>Warehouse Facility</h5>				
-													</div>
-												</div>
-
-												<div class="carousel-item text-center p-4">
-													<img class="left-block img-responsive card-img-top embed-responsive-item" src="images/sgfimageemptycontainer.png" alt="container">
-													<div class="carousel-caption">
-														<h5>Containers Available</h5>				
-													</div>
-												</div>
-
-
-											</div>
-											<a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
-												<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-											</a>
-											<a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
-												<span class="carousel-control-next-icon" aria-hidden="true"></span>
-											</a>
-										</div>
-									</div>
-							</div>			
-				</div> 
-			 
-
-        NEW CAROUSEL END HERE -->
+        <!--CAROUSEL TEST BEGIN HERE-->
         
-        
-        
-        
-        <!--CAROUSEL STARTS HERE-->
-        <!--
-            <main class="carousel">
-                <div class="carousel-slide">
-                    <img src="assets/img/blu atlantic pic-1.jpg"  alt="">
-                    <img src="assets/img/blu atlantic pic-2.jpg"  alt="">
-                    <img src="assets/img/blu atlantic pic-3.jpg"  alt=""> 
-                    <img src="assets/img/blu atlantic pic-5.jpg"  alt=""> 
-                    <img src="assets/img/blu atlantic pic-6.jpg"  alt=""> 
-                    <img src="assets/img/blu atlantic pic-7.jpg"  alt=""> 
-                    <img src="assets/img/blu atlantic pic-8.jpg"  alt="">
-                    <img src="assets/img/blu atlantic pic-9.jpg"  alt="">
-                    <img src="assets/img/blu atlantic pic-10.jpg"  alt=""> 
-                    <img src="assets/img/blu atlantic pic-11.jpg"  alt=""> 
-                    <img src="assets/img/blu atlantic pic-12.jpg"  alt=""> 
-                    <img src="assets/img/blu atlantic pic-13.jpg"  alt=""> 
-                    <img src="assets/img/blu atlantic pic-14.jpg"  alt=""> 
-                    <img src="assets/img/blu atlantic pic-15.jpg"  alt=""> 
-                    <img src="assets/img/blu atlantic pic-16.jpg"  alt=""> 
-                    <img src="assets/img/blu atlantic pic-17.jpg"  alt=""> 
-                    <img src="assets/img/blu atlantic pic-18.jpg"  alt=""> 
-                    <img src="assets/img/blu atlantic pic-19.jpg"  alt=""> 
-                    <img src="assets/img/blu atlantic pic-20.jpg"  alt=""> 
-                    <img src="assets/img/blu atlantic pic-21.jpg"  alt=""> 
-                    <img src="assets/img/blu atlantic pic-22.jpg" alt=""> 
-                    <img src="assets/img/blu atlantic pic-23.jpg"  alt=""> 
-                    <img src="assets/img/blu atlantic pic-24.jpg"  alt=""> 
+                <div class="carousel-container">
+                    <div class="group1">
+                            <img src="assets/img/blu atlantic pic-1.jpg"  alt="" class="picimg">
+                            <img src="assets/img/blu atlantic pic-2.jpg"  alt="" class="picimg">
+                            <img src="assets/img/blu atlantic pic-3.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-5.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-6.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-7.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-8.jpg"  alt="" class="picimg">
+                            <img src="assets/img/blu atlantic pic-9.jpg"  alt="" class="picimg">
+                            <img src="assets/img/blu atlantic pic-10.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-11.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-12.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-13.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-14.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-15.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-16.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-17.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-18.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-19.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-20.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-21.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-22.jpg" alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-23.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-24.jpg"  alt="" class="picimg"> 
+                    </div>
+                    
+                    <div class="group1">
+                            <img src="assets/img/blu atlantic pic-1.jpg"  alt="" class="picimg">
+                            <img src="assets/img/blu atlantic pic-2.jpg"  alt="" class="picimg">
+                            <img src="assets/img/blu atlantic pic-3.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-5.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-6.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-7.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-8.jpg"  alt="" class="picimg">
+                            <img src="assets/img/blu atlantic pic-9.jpg"  alt="" class="picimg">
+                            <img src="assets/img/blu atlantic pic-10.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-11.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-12.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-13.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-14.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-15.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-16.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-17.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-18.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-19.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-20.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-21.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-22.jpg" alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-23.jpg"  alt="" class="picimg"> 
+                            <img src="assets/img/blu atlantic pic-24.jpg"  alt="" class="picimg"> 
+                    </div>
                 </div>
-            </main> 
-            -->
-    
-    <!--CAROUSEL END HERE-->
+        
+        <!--CAROUSEL TEST END HERE-->
         
         
         
         
-</div>  <!--container div end-->
         
+</div>  <!--Main container div end-->
+        
+    <script src="assets/js/formprocess.js"></script>
+    <script src="assets/js/formprocess2.js"></script>
     <script src="assets/js/script.js"></script>
     </body>
 </html>
