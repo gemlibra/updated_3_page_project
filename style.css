@@ -1,0 +1,349 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(../img/bgimagecitylights.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/*NOTE: POSITION ELEMENT ON TOP RIGHT CORNER OF PAGE:
+  NOTE: THIS MUST BE ON THE PARENT ELEMENT TO WORK
+ * */
+#mymodal{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+}
+
+/*
+/* External outer div styling*/
+
+
+
+/*inner div - modal content styling*/
+#modalcontent{
+    display: block;
+    left: 0;
+    top: 0;
+    /*float: right;*/
+    /*text-align: center;*/
+    overflow: auto;
+    background-color: blue;
+    color: white;
+    margin: 15% auto;
+    border: 1px solid dotted;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* close button 'X' styling*/
+
+#closebtn{
+    color: red;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#closebtn:hover{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#home{
+    color: white;
+    margin-left: 10px;
+}
+
+.nav-slogan{
+    display: flex;
+    justify-content: space-between;
+}
+
+a{
+    text-decoration: none;
+    margin-right: 20px;
+
+}
+
+#sloganid{
+    font-family: "Tangerine", cursive;
+    font-weight: 700;
+    font-style: normal;
+    border: 2px solid yellow;
+    border-radius: 10px;
+    background-color: blue;
+    color: white;
+    width: 350px;
+    margin-left: 10px;
+    padding: 2px;
+    text-align: center;
+}
+
+.slogan {
+    height: 85px;
+}
+
+#hdrnav{
+    margin-left: 10px;
+}
+
+a{
+    border: 1px solid;
+    border-radius: 5px;
+    color: white;
+    background-color: blue;
+    box-shadow:  0px 3px 8px #000;  /* Create a static shadow on the element */
+    transition: all;
+}
+
+a:hover{
+   box-shadow: 0px 8px 30px;   /* Create a shadow effect when element is hovered over */
+}
+
+
+ #htlreserve{
+    text-align: center; 
+    width: 200px;
+    color: white;
+    border: 1px solid yellow;
+    border-radius: 13px;
+    justify-content: center; 
+}
+
+#pagetitle{
+    display: grid;
+    place-items: center;
+}
+
+#hotelname{
+    font-family: "Tangerine", cursive;
+    font-weight: 700;
+    font-style: normal;
+    border: 2px solid blue;
+    border-radius: 10px;
+    color: white; 
+    height: 100px;
+}
+
+#hotellogo{
+    display: flex;
+    justify-content: space-between;
+}
+
+#bluatlbldgpic{
+    margin-left: 10px;
+    border: 2px solid lightblue;
+    border-radius: 15px;
+    justify-content: space-around;
+    float: left;
+}
+
+.hospitalitytext{
+    font-family: "Tangerine", cursive;
+    font-size: 30px;
+    float: right;
+    color: white;
+    border: 1px solid red;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#bluatlsubname{
+    float: right;
+}
+
+
+ /*Form controls below */
+
+.myform{
+    margin-bottom: 100px;
+}
+
+form{
+    display: grid;
+    place-items: center;
+}
+ 
+.alllabels{
+    background-color: lightblue;
+    border: 1px solid blue;
+    border-radius: 10px;
+    opacity: 0.8;
+    color: blue;
+    margin-top: 200px;
+}
+
+
+/*ANIMATION ENDS HERE */
+
+#guestname{
+    display: flex;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    justify-content: center;
+    gap: 10px;
+}
+
+.alllabels{
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+
+#checkin_out_lbls{
+    display: flex;
+    margin-bottom: 15px;
+    gap: 10px;
+    text-align-last: center;
+}
+
+#guest_lbl{
+    display: flex;
+    justify-content: space-betwe;
+}
+
+#guest_lbl, #checkin_out_lbls {
+    justify-content: center;
+}
+
+#checkin_out_lbls, #guest_lbl{
+    margin-left: 55px;
+}
+
+#selectnumguests, #selectnumrms{
+    width: 120px;
+}
+
+#selectnumguests{
+    margin-right: 15px;
+}
+
+
+#btnsubmit{
+    background-color: blue;
+    font-size: 16px;
+    color: white;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+    
+#btnsearch{
+    background-color: blue;
+    font-size: 18px;   
+    color: white;
+    float: right;
+    margin-bottom: 5px; 
+    margin-right: 10px;
+}
+
+/* CAROUSEL CSS START HERE */
+
+
+    .carousel-item{
+        border: 1px solid red;
+        border-radius: 10px;
+        width: 350px;
+        justify-content: space-around;
+        
+    }
+
+
+/* Hospitality Element animation */
+/* The code below executes the 3D spinner defined in the html paragraph*/
+  .hospitalitytext{
+      animation-name: rotatinglaptopgraphic;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-duration: 10s;   /* <= This controls the animation speed. */
+      transform-style: preserve-3d;
+    }
+
+    /* WebKit and Opera browsers */
+    @-webkit-keyframes rotatinglaptopgraphic {
+      from { -webkit-transform: rotateY(0deg);
+      }
+      to   { -webkit-transform: rotateY(-360deg);}
+    }
+    
+    /* all other browsers */
+    @keyframes rotatinglaptopgraphic {
+      from {
+        -moz-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+      }
+      to {
+        -moz-transform: rotateY(-360deg);
+        -ms-transform: rotateY(-360deg);
+        transform: rotateY(-360deg);
+      }
+    }
+
+/*BORDER GLOW ANIMATION EFECT BEGIN */
+
+#sloganid{
+    animation: textglow 1s infinite alternate;
+  }
+  
+  @keyframes textglow {
+    from {
+      box-shadow: 0 0 10px -10px #cf1b0d;
+    }
+    to {
+      box-shadow: 0 0 10px 10px #f4aee5;
+    }
+  }
+
+/*BORDER GLOW ANIMATION EFFECT END*/
+  
+/*CAROUSEL ANIMATION CSS*/
+.carousel-container{
+    margin: 100px auto;
+    width: 90%;
+    border: 1px solid red;
+    display: flex;
+    overflow-x: auto;
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.group1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    animation: spin 40s infinite linear;
+    padding-right: 1em;
+}
+
+ .picimg {
+    flex: 0 0 5em;
+    height: 5em;
+    padding: 1em;
+    background: cornflowerblue;
+    font-size: 3rem;
+    border-radius: 2em;
+    text-align: center;
+    align-content: center;
+}
+
+@keyframes spin {
+    from {translate: 0;}
+    to {translate:  -100%;}
+}
+
+
+
+
+
+
